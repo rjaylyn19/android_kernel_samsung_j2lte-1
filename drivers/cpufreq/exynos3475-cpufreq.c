@@ -234,8 +234,12 @@ static void __init set_volt_table(void)
 				exynos3475_volt_table[i]);
 	}
 
-	max_support_idx = L2;	/* 1.3GHz */
-	min_support_idx = L11;	/* 400MHz */
+#ifdef CONFIG_SOC_EXYNOS3475_OVERCLOCK
+	max_support_idx = L0;	/* 1,495MHz */
+#else
+	max_support_idx = L2;	/* 1,300MHz */
+#endif
+	min_support_idx = L12;	/*   299MHz */
 	pr_info("CPUFREQ : max_freq : L%d %u khz\n", max_support_idx,
 		exynos3475_freq_table[max_support_idx].frequency);
 	pr_info("CPUFREQ : min_freq : L%d %u khz\n", min_support_idx,
