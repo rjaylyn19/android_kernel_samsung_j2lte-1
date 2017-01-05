@@ -36,8 +36,6 @@ static struct clk *cpu_pll;
 static struct clk *mout_cpu;
 static struct clk *mout_mpll;
 
-//static unsigned int exynos3475_volt_table[CPUFREQ_LEVEL_END];
-
 static unsigned int exynos3475_volt_table[CPUFREQ_LEVEL_END] = {
 	1200000, 1175000, 1150000, 1125000, 1100000, 1075000, 1050000,
 	1025000, 1000000, 975000, 950000, 925000, 900000,
